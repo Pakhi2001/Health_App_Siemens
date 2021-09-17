@@ -1,9 +1,9 @@
 :root {
-  --c-main-text: #333;
+  --c-main-text: #000000;
   --c-main-bg: rgb(255, 255, 255);
-  --c-theme-first: rgb(4, 0, 255);
-  --c-theme-second: #fbff00;
-  --c-secondary-text: #808080;
+  --c-theme-first: #EEEEEE;
+  --c-theme-second: #BD4B4B;
+  --c-secondary-text: #000000;
   --c-secondary-bg: #CCC;
   --border-radius: 3px;
   --height-top: 2.5rem;
@@ -22,6 +22,7 @@ body {
   background: var(--c-main-bg);
   line-height: 1.4;
   margin: 0;
+  background-image: url(/images/1.jpg);
 }
 body, input, button {
   color: var(--c-main-text);
@@ -174,11 +175,17 @@ label, button, input[type=button], input[type=submit], input[type=reset] {
 }
 .add-form {
   display: none;
+  /* width:70%;
+  padding-top: 20px;
+  padding-left: 400px; */
+  text-align: center;
 }
 .add-form--selected {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  
+  
 }
 .add-form__date {
   background: transparent;
@@ -191,13 +198,12 @@ label, button, input[type=button], input[type=submit], input[type=reset] {
   width: 100%;
 }
 .add-form__button {
-  background: var(--c-secondary-bg);
+  background: #EFB7B7;
   border: 1px solid var(--c-main-text);
   border-radius: var(--border-radius);
   font-size: inherit;
   margin: 0 0 var(--gap);
   padding: var(--gap) calc(var(--gap) * 2);
-  width: 100%;
 }
 @media (min-width:300px) {
   .add-form__button {
@@ -230,6 +236,7 @@ label, button, input[type=button], input[type=submit], input[type=reset] {
 .main-nav__link {
   color: var(--c-theme-second);
   display: block;
+  border-radius:0;
   font-size: .8em;
   height: 100%;
   padding-top: 0.5em;
@@ -237,6 +244,7 @@ label, button, input[type=button], input[type=submit], input[type=reset] {
 }
 .main-nav__link:hover, .main-nav__link:focus {
   text-shadow: 1px 1px 10px rgba(255, 255, 255, 1);
+  color:#EEEEEE;
 }
 .main-nav__link--selected {
   background: var(--c-theme-second);
@@ -272,15 +280,19 @@ label, button, input[type=button], input[type=submit], input[type=reset] {
 }
 .home__add {
   background: var(--c-theme-second);
-  border: 1px solid rgba(0, 0, 0, .25);
-  border-radius: var(--border-radius);
+  /* border: 1px solid rgba(0, 0, 0, .25); */
+  border-radius: 6%;
   color: var(--c-theme-first);
   display: block;
   font-size: 1.5em;
   font-weight: bold;
   margin: 0 auto;
   padding: .47em .67em;
-  width: 100%;
+  width: 30%;
+  
+}
+.home__add:hover{
+  background-color: black;
 }
 .home_add--hide {
   display: none;
@@ -294,7 +306,7 @@ label, button, input[type=button], input[type=submit], input[type=reset] {
 /*=== calendar */
 .calendar {
   background: var(--c-secondary-bg);
-  border-spacing: 1px;
+  border-spacing: 10px;
   text-align: center;
   width: 100%;
 }
