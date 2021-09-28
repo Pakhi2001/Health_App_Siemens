@@ -18,13 +18,28 @@
 html {
   font-size: 18px;
 }
-body {
-  background: var(--c-main-bg);
+body:before {
+  /* background: var(--c-main-bg);
   line-height: 1.4;
   margin: 0;
   background-image: url(/images/1.jpg);
+  background-size: 100%; */
+  background: var(--c-main-bg);
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: url(/images/1.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-}
+  
+  }
 body, input, button {
   color: var(--c-main-text);
   font-family: Arial, sans-serif;
@@ -282,10 +297,10 @@ label, button, input[type=button], input[type=submit], input[type=reset] {
 .home__add {
   background: var(--c-theme-second);
   /* border: 1px solid rgba(0, 0, 0, .25); */
-  border-radius: 6%;
+  border-radius: 25px;
   color: var(--c-theme-first);
   display: block;
-  font-size: 1.5em;
+  font-size: 2vw;
   font-weight: bold;
   margin: 0 auto;
   padding: .47em .67em;
@@ -392,7 +407,7 @@ label, button, input[type=button], input[type=submit], input[type=reset] {
   width: 2.5em;
 }
 .log-list__info--edit {
-  display: none; // temporarily
+  display: none; /* temporarily*/
 }
 .log-list__button {
   background: transparent;
