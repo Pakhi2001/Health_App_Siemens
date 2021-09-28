@@ -157,7 +157,7 @@ label, button, input[type=button], input[type=submit], input[type=reset] {
   width: 3em;
 }
 .input-number__button {
-  background: var(--c-secondary-bg);
+  background: rgb(228, 131, 147);
   border: 0 none;
   border-radius: 0;
   font-size: 1.5em;
@@ -444,16 +444,18 @@ label, button, input[type=button], input[type=submit], input[type=reset] {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  font-weight: bold;
   margin: 0 0 .3em;
   padding: .5em 0 .5em 1px;
   text-align: left;
   width: 100%;
 }
 .settings__button {
-  background: var(--c-secondary-bg);
-  border: 1px solid var(--c-main-text);
+  background: rgb(228, 131, 147);
+  border: 2px solid var(--c-main-text);
   border-radius: var(--border-radius);
   font-size: inherit;
+  font-weight: bold;
   padding-left: 1em;
   padding-right: 1em;
 }
