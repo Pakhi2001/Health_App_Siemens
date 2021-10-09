@@ -24,7 +24,7 @@ body {
   background: var(--c-main-bg);
   line-height: 1.4;
   margin: 0;
-  background-image: url(/images/1.jpg);
+  background-image: url(/1.jpg);
 }
 body,
 input,
@@ -510,4 +510,28 @@ input[type="reset"] {
 .alert--warning {
   --c-bg: #fcf8e3;
   --c-fg: #8a6d3b;
+}
+.profile {
+  /* background-color: white; */
+  /* max-width: 100px;
+  margin: 0 auto;
+  padding: 40px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  border-radius: 3px; */
+  margin: auto;
+  width: 50%;
+  align-items: center;
+  align-content: center;
+  /* border: 3px solid green; */
+  padding: 40px;
+  position: absolute;
+  left: 40%;
+}
+.link {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.link a {
+  color: #101011;
 }

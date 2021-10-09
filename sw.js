@@ -4,7 +4,7 @@ const cacheName = 'v' + '0.5' + '::static';
 
 var fileList = [
   './',
-  'css/main.css',
+  'public/main.css',
   'js/app.js',
   'js/config.js',
   'js/controller.js',
