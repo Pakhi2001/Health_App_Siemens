@@ -1,3 +1,12 @@
+<!-- <%- include('header'); -%> -->
+<!-- <div class="container">
+    <div class="profile">
+        <div class="img">👦</div>
+        <h2><%= user.name %></h2>
+        <span><%= user.email %></span>
+        <a href="/logout">Log Out</a>
+    </div>
+</div> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +20,16 @@
   <title> RITU </title>
 
   <link rel="icon apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" type="image/png">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./main.css">
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
 
@@ -192,23 +203,31 @@
       </p>
     </div>
   </section>
-
+  <!-- <div class="container">
+    <div class="profile">
+        <h2>HELLO ,<%= user.name.toUpperCase() %></h2>&nbsp;
+        <a href="/logout"><button>Log Out</button></a>
+        
+    </div>
+  </div> -->
 
 <!-- ALERTS -->
   <div id="alerts" class="alerts-wrapper"></div>
 </main>
+<div class="link" ><a href="/logout">Log Out</a></div>
 
-<script src="vendor/moment-2.13.0.min.js"></script>
-<script src="js/settings.js"></script>
-<script src="js/helpers.js"></script>
-<script src="js/config.js"></script>
-<script src="js/gcal.js"></script>
-<script src="js/model.js"></script>
-<script src="js/template.js"></script>
-<script src="js/view.js"></script>
-<script src="js/controller.js"></script>
-<!-- <script src="js/mine.js"></script> -->
-<script src="js/app.js"></script>
+<script src="./moment-2.13.0.min.js"></script>
+<script src="./settings.js"></script>
+<script src="./helpers.js"></script>
+<script src="./config.js"></script>
+<script src="./gcal.js"></script>
+<script src="./model.js"></script>
+<script src="./template.js"></script>
+<script src="./view.js"></script>
+<script src="./controller.js"></script>
+<!-- <script src="js/mine.js"></script>-->
+<script src="./app.js"></script> 
 
 </body>
 </html>
+<!-- <%- include('footer'); -%> -->
