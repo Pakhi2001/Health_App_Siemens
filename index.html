@@ -139,7 +139,7 @@
       <span id="average" class="log-average__counter">&nbsp;</span> Days in your average cycle
     </div>
 
-    <button class="log__add" id="log-add">Add entry</button>
+    <!-- <button class="log__add" id="log-add">Add entry</button> -->
 
     <form class="add-form" id="add-form">
       <input type="date" id="add-date" class="add-form__date" required>
@@ -154,11 +154,11 @@
 <!-- SETTINGS -->
   <section id="settings" class="main-section main-section--settings">
     <div class="settings">
-      <button class="settings__option settings__button" onclick="giulia()">Load test data</button>
+      <button class="settings__option settings__button" style="display:none;" onclick="giulia()">Load test data</button>
       
       <button class="settings__option settings__button" id="delete-all">Delete all data</button>
       
-      <button class="settings__option settings__button" id="gcal-connect"><span id="gcal-connect-on">Connect Google account</span><span id="gcal-connect-off" style="display:none">Disconnect <strong id="gcal-connect-user"></strong></span></button>
+      <button class="settings__option settings__button" style="display:none;" id="gcal-connect"><span id="gcal-connect-on">Connect Google account</span><span id="gcal-connect-off" style="display:none">Disconnect <strong id="gcal-connect-user"></strong></span></button>
       <!-- <button class="settings__option settings__button">Disconnect Google account</button> -->
       
       <div class="input-checkbox">

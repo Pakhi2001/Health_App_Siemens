@@ -3,10 +3,33 @@ const bcrypt = require('bcryptjs');
 const dbConnection = require("../utils/dbConnection");
 const path = require('path');
 
+//mongodb
+const mongoose=require("mongoose");
+
+const uri = "mongodb+srv://amanjha8100:anuragA00@cluster0.xkbdy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const mongoFunc = async () =>{
+    await mongoose.connect(uri, {
+        useUnifiedTopology: true,
+    }).then(() => console.log('mongoDB connected...'));    
+}
+mongoFunc();
+
+//Schema definition
+
+const user = new mongoose.Schema({
+    name: String,
+    email: String,
+    password: String
+});
+
+
+const User = mongoose.model("user",user);
+
 
 // Home Page
 exports.homePage = async (req, res, next) => {
-    const [row] = await dbConnection.execute("SELECT * FROM `users` WHERE `id`=?", [req.session.userID]);
+    // const [...row] = await dbConnection.execute("SELECT * FROM `users` WHERE `id`=?", [req.session.userID]);
+    const [...row] = await User.find({_id:req.session.userID});
 
     if (row.length !== 1) {
         return res.redirect('/logout');
@@ -44,10 +67,12 @@ exports.register = async (req, res, next) => {
 
     try {
 
-        const [row] = await dbConnection.execute(
-            "SELECT * FROM `users` WHERE `email`=?",
-            [body._email]
-        );
+        // const [...row] = await dbConnection.execute(
+        //     "SELECT * FROM `users` WHERE `email`=?",
+        //     [body._email]
+        // );
+
+        const [...row] = await User.find({email:body._email});
 
         if (row.length >= 1) {
             return res.render('register', {
@@ -57,19 +82,25 @@ exports.register = async (req, res, next) => {
 
         const hashPass = await bcrypt.hash(body._password, 12);
 
-        const [rows] = await dbConnection.execute(
-            "INSERT INTO `users`(`name`,`email`,`password`) VALUES(?,?,?)",
-            [body._name, body._email, hashPass]
-        );
+        // const [rows] = await dbConnection.execute(
+        //     "INSERT INTO `users`(`name`,`email`,`password`) VALUES(?,?,?)",
+        //     [body._name, body._email, hashPass]
+        // );
 
-        if (rows.affectedRows !== 1) {
-            return res.render('register', {
+        const newUser = new User({
+            name: body._name,
+            email:body._email,
+            password:hashPass
+        });
+
+        await newUser.save().then(()=>{
+            res.render("register", {
+                msg: 'You have successfully registered.'
+            });
+        }).catch(e=>{
+            res.render('register', {
                 error: 'Your registration has failed.'
             });
-        }
-        
-        res.render("register", {
-            msg: 'You have successfully registered.'
         });
 
     } catch (e) {
@@ -96,7 +127,8 @@ exports.login = async (req, res, next) => {
 
     try {
 
-        const [row] = await dbConnection.execute('SELECT * FROM `users` WHERE `email`=?', [body._email]);
+        // const [...row] = await dbConnection.execute('SELECT * FROM `users` WHERE `email`=?', [body._email]);
+        const [...row] = await User.find({email:body._email});
 
         if (row.length != 1) {
             return res.render('login', {
